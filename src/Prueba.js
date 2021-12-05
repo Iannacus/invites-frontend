@@ -17,8 +17,8 @@ const Prueba = () => {
     }
   }, [eventInformation]);
 
-  handleConfirmation = () =>{
-    
+  const handleConfirmation = () =>{
+    console.log('confirmado')
   }
 
   return(
