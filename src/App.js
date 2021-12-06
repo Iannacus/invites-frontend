@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import XVCamila from './pages/XVCamila';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 import './App.css';
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<XVCamila firstname='' lastname='' />} />
+        <Route path="/home" element={<Home />} />
           {
             eventGuest.map((guest, i) =>
                   <Route 
