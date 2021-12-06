@@ -9,7 +9,6 @@ const Contador = () => {
   const [leftHours, setLeftHours] = useState('');
   const [leftMinutes, setLeftMinutes] = useState('');
   const [leftSeconds, setLeftSeconds] = useState('');
-  const [blinkFlag, setBlinkFlag] = useState(true);
 
 
   
@@ -18,7 +17,6 @@ const Contador = () => {
     const partyDate = new Date(Date.UTC(2021, 11, 19, -2, 0, 0, 0));
     const interval = setInterval(() => {
       setLeft(partyDate - actualDate);
-      setBlinkFlag(prevBlinkFlag => !prevBlinkFlag);
     },1000);
     return () => clearInterval(interval);
   }, [left]);
@@ -34,11 +32,11 @@ const Contador = () => {
   return (
     <div className='counter-container'>
     <Digit textDigit={leftDays} />
-    <DigitSeparator blink={blinkFlag} />
+    <DigitSeparator />
     <Digit textDigit={leftHours % 24} />
-    <DigitSeparator blink={blinkFlag} />
+    <DigitSeparator />
     <Digit textDigit={leftMinutes % 60} />
-    <DigitSeparator blink={blinkFlag} />
+    <DigitSeparator />
     <Digit textDigit={leftSeconds % 60} />
     </div>
   )

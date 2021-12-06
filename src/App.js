@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import XVCamila from './pages/XVCamila';
+import Home from './pages/Home';
 import './App.css';
 
 function App() {
@@ -20,46 +21,25 @@ function App() {
     }
   }, [eventInformation]);
 
-  console.log(
-    eventGuest.map((guest, i) => {
-      return(
-        <Route 
-          path={`/camila/${guest.firstname}`} 
-          element={
-            <XVCamila
-              firstname={guest.firstname}
-              lastname={guest.lastname}
-            />
-          } 
-          key={i} 
-        />
-      )
-    })
-  )
-
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<XVCamila firstname='' lastname='' />} />
-        {
-          eventGuest.map((guest, i) => {
-            console.log(i);
-            return(
-              <Route 
-                path={`/camila/${guest.firstname}`} 
-                element={
-                  <XVCamila
-                    firstname={guest.firstname}
-                    lastname={guest.lastname}
+        <Route path="/" element={<Home /> } />
+          <Route path="/camila" element={<XVCamila firstname='' lastname='' />} />
+          {
+            eventGuest.map((guest, i) =>
+                  <Route 
+                    path={`/camila/${guest.firstname}`} 
+                    element={
+                      <XVCamila
+                        firstname={guest.firstname}
+                        lastname={guest.lastname}
+                      />
+                    }  
+                    key={i} 
                   />
-                } 
-                key={i} 
-              />
             )
-          })
-        }
-        
+          }
       </Routes>
     </BrowserRouter>
   );

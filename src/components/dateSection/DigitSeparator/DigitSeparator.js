@@ -1,21 +1,10 @@
 import React from 'react';
 import '../Digit/Digit.css';
 
-const DigitSeparator = ({ blink }) => {
+const DigitSeparator = () => {
   
   return(
-    <>
-      {
-        blink ? 
-          <p className='digit'>
-            :
-          </p>
-          : 
-          <p className='digit'>
-           &nbsp;
-          </p>
-      }
-    </>
+    <p className='digit'> :  </p>     
   )
 }
 

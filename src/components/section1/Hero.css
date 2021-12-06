@@ -1,8 +1,9 @@
 .hero{
-  background-image: url('../../img/fotosXVCamila/uno.png');
   background-position: top center;
   background-size: cover;
+  position: relative;
 }
+
 
 @media(min-width: 1120px){
   .hero{
@@ -19,6 +20,7 @@
 
 .present {
   position: relative;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +28,7 @@
 }
 
 .sticker {
-  width: 270%;
+  width: 230%;
   position: absolute;
 }
 
