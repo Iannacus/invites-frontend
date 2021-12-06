@@ -2,23 +2,28 @@ import React from 'react';
 import img2 from '../../img/fotosXVCamila/dos.png'
 import Button from '../Button/Button';
 import Contador from './Contador';
+import Loader from '../Loader';
 import './DateSection.css';
 
-const DateSection = () => {
-
-
+const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
+  
   const handleConfirmation = () => {
-    console.log('envinado confirmacion')
-    // fetch('https://invitaciones-back.herokuapp.com/api/v1/guests', {
-    //   method: 'PUT',
-    //   body: JSON.stringify(),
-    //   headers:{
-    //     'Content-Type': 'appllication/json'
-    //   }
-    // })
-    // .then(response => response.json())
-    // .catch(error => console.error('Error', error))
-    // .then(response => console.log('Succes', response));
+
+    setSpiner(true);
+    fetch(`https://invitaciones-back.herokuapp.com/api/v1/guests/${guestId}`, {
+      method: 'PUT',
+      headers:{
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify({confirmation: true})
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error', error))
+    .then(response => {
+      setSpiner(false);
+      console.log(response);
+      window.location.reload(true);
+    });
   }
 
   return(
@@ -38,12 +43,25 @@ const DateSection = () => {
           <h1 style={{color: '#FFF', fontSize: '56px', marginBottom: '20px'}}>18 Dic 2021</h1>
           <h5 style={{color: '#FFF'}}>Sólo Faltan: </h5>
           <Contador />
-          <Button 
-            textButton='Confirmar Asistencia'
-            color='#82bed6' 
-            bgColor='#FFF'
-            onClick={() => handleConfirmation}
-          />
+          {
+            loading ? 
+              <Loader />
+              :
+              !confirmation ? 
+                <Button 
+                  textButton='Confirmar Asistencia'
+                  color='#82bed6' 
+                  bgColor='#FFF'
+                  funct={handleConfirmation}
+                />
+                : 
+                <Button 
+                  textButton='Gracias por confirmar tu asistencia'
+                  color='#82bed6' 
+                  bgColor='#FFF'
+                  funct={() => {alert("Ya has confirmado tu asistencia")}}
+                />
+          }
         </div>
       </div>
     </div>

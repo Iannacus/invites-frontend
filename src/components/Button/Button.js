@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ textButton, color, bgColor }) => {
+const Button = ({ textButton, color, bgColor, funct }) => {
   return (
     
       <div style={{
@@ -13,6 +13,8 @@ const Button = ({ textButton, color, bgColor }) => {
           alignItems: 'center',
           justifyContent: 'center'
         }}
+        className='hover-pointer'
+        onClick={() => funct()}
       >
         {textButton}
       </div>

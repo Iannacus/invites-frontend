@@ -6,8 +6,8 @@ import ReceptionSection from '../components/receptionSection/ReceptionSection';
 import Hero from '../components/section1/Hero';
 import Section2 from '../components/section2/Section2';
 
-const XVCamila =  ({ firstname, lastname }) => {
-
+const XVCamila =  ({ firstname, lastname, confirmation, id, loading, setSpiner }) => {
+  console.log(firstname)
   return(
     <>
       <Hero />
@@ -15,7 +15,12 @@ const XVCamila =  ({ firstname, lastname }) => {
         firstname={firstname}
         lastname={lastname}  
       />
-      <DateSection />
+      <DateSection 
+        confirmation={confirmation}
+        guestId={id}
+        loading={loading}
+        setSpiner={setSpiner}
+      />
       <ReceptionSection />
       <GalerySection />
       <ByeSection />

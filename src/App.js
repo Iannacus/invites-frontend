@@ -7,6 +7,7 @@ import './App.css';
 function App() {
   const [eventInformation, setEventInformation] = useState(null);
   const [eventGuest, setEventGuest] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch('https://invitaciones-back.herokuapp.com/api/v1/events/1/information')
@@ -34,6 +35,10 @@ function App() {
                       <XVCamila
                         firstname={guest.firstname}
                         lastname={guest.lastname}
+                        confirmation={guest.confirmation}
+                        id={guest.id}
+                        loading={loading}
+                        setSpiner={setLoading}
                       />
                     }  
                     key={i} 
