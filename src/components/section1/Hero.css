@@ -1,0 +1,29 @@
+.hero{
+  background-image: url('../../img/fotosXVCamila/1.png');
+  background-position: center center;
+  background-size: cover;
+}
+
+.subtitle {
+  color: #dbbb7f;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+}
+
+.present {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticker {
+  width: 270%;
+  position: absolute;
+}
+
+.sticker img {
+  width: 100%;
+}
