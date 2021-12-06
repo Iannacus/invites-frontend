@@ -20,6 +20,22 @@ function App() {
     }
   }, [eventInformation]);
 
+  console.log(
+    eventGuest.map((guest, i) => {
+      return(
+        <Route 
+          path={`/camila/${guest.firstname}`} 
+          element={
+            <XVCamila
+              firstname={guest.firstname}
+              lastname={guest.lastname}
+            />
+          } 
+          key={i} 
+        />
+      )
+    })
+  )
 
 
   return (
@@ -28,6 +44,7 @@ function App() {
         <Route path='/' element={<XVCamila firstname='' lastname='' />} />
         {
           eventGuest.map((guest, i) => {
+            console.log(i);
             return(
               <Route 
                 path={`/camila/${guest.firstname}`} 
