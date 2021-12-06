@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = ({ textButton, link }) => {
   return (
-    <a href={link} target='_blank' 
+    <a href={link} target='_blank' rel="noreferrer"
       style={{
         textDecoration: 'none'
       }}
