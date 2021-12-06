@@ -25,6 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<XVCamila firstname='' lastname='' />} />
         {
           eventGuest.map((guest, i) => {
             return(
