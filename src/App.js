@@ -30,7 +30,7 @@ function App() {
           {
             eventGuest.map((guest, i) =>
                   <Route 
-                    path={`/camila/${guest.firstname}`} 
+                    path={`/camila/${guest.id}`} 
                     element={
                       <XVCamila
                         firstname={guest.firstname}
