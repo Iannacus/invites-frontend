@@ -1,29 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img2 from '../../img/fotosXVCamila/dos.png'
 import Button from '../Button/Button';
 import Contador from './Contador';
 import Loader from '../Loader';
 import './DateSection.css';
+import NumberInput from '../inputs/NumberInput';
 
 const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
-  
-  const handleConfirmation = () => {
+  const [number, setNumber] = useState('');
+  const [alert, setAlert] = useState(false);
 
-    setSpiner(true);
-    fetch(`https://invitaciones-back.herokuapp.com/api/v1/guests/${guestId}`, {
-      method: 'PUT',
-      headers:{
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify({confirmation: true})
-    })
-    .then(response => response.json())
-    .catch(error => console.error('Error', error))
-    .then(response => {
-      setSpiner(false);
-      console.log(response);
-      window.location.reload(true);
-    });
+  const handleConfirmation = () => {
+    if(number !== ''){
+      setSpiner(true);
+      fetch(`https://invitaciones-back.herokuapp.com/api/v1/guests/${guestId}`, {
+        method: 'PUT',
+        headers:{
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({confirmation: true, guest_number: number})
+      })
+      .then(response => response.json())
+      .catch(error => console.error('Error', error))
+      .then(response => {
+        setSpiner(false);
+        console.log(response);
+        window.location.reload(true);
+      });
+    }else{
+      setAlert(true);
+    }
+  }
+
+  const handleNumber = (e) => {
+    setNumber(e.target.value);
+    setAlert(false);
   }
 
   return(
@@ -48,12 +59,16 @@ const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
               <Loader />
               :
               !confirmation ? 
-                <Button 
-                  textButton='Confirmar Asistencia'
-                  color='#82bed6' 
-                  bgColor='#FFF'
-                  funct={handleConfirmation}
-                />
+                <div className='inputs'>
+                  <NumberInput funct={handleNumber} alert={alert}/>
+                  <Button 
+                    textButton='Confirmar Asistencia'
+                    color='#82bed6' 
+                    bgColor='#FFF'
+                    funct={handleConfirmation}
+                  />
+                </div>
+                
                 : 
                 <Button 
                   textButton='Gracias por confirmar tu asistencia'

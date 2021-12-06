@@ -1,3 +1,18 @@
 .section-border {
   border: 2px solid #d8c084;
 }
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.number-input {
+  padding: 10px 0 10px 10px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+}

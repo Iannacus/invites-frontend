@@ -63,7 +63,7 @@ const Dashboard = ({guests}) => {
                     display: 'flex',
                     justifyContent: 'center',
                   }}
-                >Asiste</div>
+                >{guest.guest_number}</div>
               :
               <div 
                 style={{
