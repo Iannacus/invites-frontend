@@ -1,18 +1,13 @@
 import React from 'react';
 
-const Button = ({ textButton, link }) => {
+const Button = ({ textButton, color, bgColor }) => {
   return (
-    <a href={link} target='_blank' rel="noreferrer"
-      style={{
-        textDecoration: 'none'
-      }}
-    >
+    
       <div style={{
-          width: '50%',
-          margin: 'auto',
+          margin: '0 auto',
           padding: '10px 15px',
-          color: '#FFF',
-          backgroundColor: '#82bed6',
+          color: color,
+          backgroundColor: bgColor,
           borderRadius: '7px',
           display: 'flex',
           alignItems: 'center',
@@ -21,7 +16,6 @@ const Button = ({ textButton, link }) => {
       >
         {textButton}
       </div>
-    </a>
   )
 }
 

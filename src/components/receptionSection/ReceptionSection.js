@@ -31,7 +31,16 @@ const ReceptionSection = () => {
         </h4>
         <p className='gold text-center' style={{fontSize: '18px'}}>Av. Paseo del mar entre calle 78, a un costado de la palapa naval</p>
         <h4 style={{marginBottom: '35px'}} className='blue text-center'>4:00 pm</h4>
-        <Button textButton='Cómo llegar' link='https://goo.gl/maps/M6UAXb8i4DBVBe5w5' />
+        <a href='https://goo.gl/maps/M6UAXb8i4DBVBe5w5' target='_blank' rel="noreferrer"
+          style={{
+            textDecoration: 'none',
+            display: 'block',
+            margin: 'auto',
+            width: '50%'
+          }}
+        >
+          <Button textButton='Cómo llegar' color='#FFF' bgColor='#82bed6'/>
+        </a>
       </div>
     </div>
   )
