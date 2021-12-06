@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import XVCamila from './pages/XVCamila';
 import Home from './pages/Home';
 import './App.css';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const [eventInformation, setEventInformation] = useState(null);
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<XVCamila firstname='' lastname='' />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard guests={eventGuest}/>} />
           {
             eventGuest.map((guest, i) =>
                   <Route 
