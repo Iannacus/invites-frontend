@@ -22,10 +22,15 @@ const Contador = () => {
   }, [left]);
 
   useEffect(() => {
-    setLeftDays(Math.floor(left/(1000*3600*24)));
-    setLeftHours(Math.floor(left/(1000*3600)));
-    setLeftMinutes(Math.floor(left/(1000*60)));
-    setLeftSeconds(Math.ceil(left/(1000)));
+    const dias = Math.floor(left/(1000*3600*24));
+    const horas = Math.floor(left/(1000*3600));
+    const min = Math.floor(left/(1000*60));
+    const sec = Math.ceil(left/(1000));
+
+    setLeftDays(dias);
+    setLeftHours(horas);
+    setLeftMinutes(min);
+    setLeftSeconds(sec);
     
   }, [left])
 
