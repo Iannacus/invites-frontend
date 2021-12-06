@@ -6,7 +6,7 @@ import './DateSection.css';
 const DateSection = () => {
   return(
     <div 
-      className='fullScreen hero'
+      className='hero'
       style={
         {
           backgroundImage: `url(${img2}`,
@@ -15,10 +15,11 @@ const DateSection = () => {
     >
       <div 
         className='shadow'
+        style={{padding: '15px'}}
       >
         <div className='fullScreen centerItem section-border'>
           <h1 style={{color: '#FFF', fontSize: '56px', marginBottom: '20px'}}>18 Dic 2021</h1>
-          <h2 style={{color: '#FFF'}}>Solo Faltan: </h2>
+          <h5 style={{color: '#FFF'}}>Sólo Faltan: </h5>
           <Contador />
         </div>
       </div>

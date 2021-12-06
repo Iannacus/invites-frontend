@@ -1,5 +1,5 @@
 import React from 'react';
-import sticker1 from '../../img/fotosXVCamila/sticker1.png'
+import sticker1 from '../../img/fotosXVCamila/sticker.png'
 import img1 from '../../img/fotosXVCamila/uno.png'
 import './Hero.css';
 
@@ -14,8 +14,13 @@ const Hero = () => {
             <div className='sticker'>
               <img src={sticker1} alt='sticker camila' />
             </div>
-            <h1 className='blue'>Camila</h1>
-            <p className='subtitle gold'>MIS 15 AÑOS</p>
+            <h1 className='blue t-shadow'>Camila</h1>
+            <p 
+              className='subtitle gold t-shadow'
+              style={{fontSize: '20px'}}
+            >
+              MIS 15 AÑOS
+            </p>
           </div>
         </div>
       </div>

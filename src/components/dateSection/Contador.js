@@ -31,13 +31,13 @@ const Contador = () => {
 
   return (
     <div className='counter-container'>
-    <Digit textDigit={leftDays} />
+    <Digit textDigit={leftDays} textDescription='Días' />
     <DigitSeparator />
-    <Digit textDigit={leftHours % 24} />
+    <Digit textDigit={leftHours % 24} textDescription='Horas'/>
     <DigitSeparator />
-    <Digit textDigit={leftMinutes % 60} />
+    <Digit textDigit={leftMinutes % 60} textDescription='Min'/>
     <DigitSeparator />
-    <Digit textDigit={leftSeconds % 60} />
+    <Digit textDigit={leftSeconds % 60} textDescription='Seg'/>
     </div>
   )
 }

@@ -1,12 +1,18 @@
 import React from 'react';
 import './Digit.css';
 
-const Digit = ({ textDigit }) => {
+const Digit = ({ textDigit, textDescription }) => {
   return(
-    <p className='digit'>
+    <div className='centerItem'>
+      <p
+        style={{margin: '0'}} 
+        className='digit'>
       {textDigit}
-    </p>
+      </p>
+      <p style={{fontSize: '14px', color: '#FFF', margin: '0'}}>{textDescription}</p>
+      </div>
   )
+    
 }
 
 export default Digit;

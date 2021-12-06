@@ -3,9 +3,9 @@ import React from 'react';
 const Mentions = ({ title, children }) => {
   return (
     <div>
-      <h4 className='purple text-center'>
+      <h5 className='blue text-center'>
         {title}
-      </h4>
+      </h5>
       {children}
     </div>
   )
