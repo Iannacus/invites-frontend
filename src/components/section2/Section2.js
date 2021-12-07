@@ -15,7 +15,7 @@ const Section2 = ({ firstname, lastname }) => {
       <p
         style={{margin: '0'}} 
         className='text-center no-margin gold'>
-        Tienen el honor de invitar a <b>{firstname} {lastname}</b> celebrar un momento muy especial
+        Tienen el honor de invitar a <b>{firstname} {lastname}</b> a celebrar un momento especial
         en la vida de su amada hija. 
       </p>
 

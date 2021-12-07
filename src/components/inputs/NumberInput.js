@@ -5,7 +5,7 @@ const NumberInput = ({funct, alert}) => {
     <input
       className='number-input'
       type='tel'
-      placeholder={alert ? 'Ingresar cantidad': 'Cantdad de personas'}
+      placeholder={alert ? 'Ingresar cantidad': 'Cantidad de personas'}
       onChange={e => funct(e)}
       onKeyPress={(e) => {
         console.log(e.charCode)

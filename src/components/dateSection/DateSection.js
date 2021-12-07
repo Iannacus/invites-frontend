@@ -37,6 +37,10 @@ const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
     setAlert(false);
   }
 
+  const handleAlert = () => {
+    window.alert("Ya has confirmado tu asistencia");
+  }
+
   return(
     <div 
       className='hero'
@@ -74,7 +78,7 @@ const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
                   textButton='Gracias por confirmar tu asistencia'
                   color='#82bed6' 
                   bgColor='#FFF'
-                  funct={() => {alert("Ya has confirmado tu asistencia")}}
+                  funct={handleAlert}
                 />
           }
         </div>
