@@ -33,7 +33,7 @@ const Section2 = ({ firstname, lastname }) => {
           <p className='no-margin gold  text-center'>Yanitzi Quiñonez de Mendoza</p>
         </Mentions>
         <Mentions title='Madrina de Comida'>
-          <p className='no-margin gold  text-center'>Zaida Contreras García</p>
+          <p className='no-margin gold  text-center'>Saida Contreras García</p>
         </Mentions>
         <Mentions title='Madrinas de Mesa de Dulces'>
           <p className='no-margin gold  text-center'>Lili Marín de Chacón</p>
