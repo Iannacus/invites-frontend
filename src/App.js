@@ -4,6 +4,7 @@ import XVCamila from './pages/XVCamila';
 import Home from './pages/Home';
 import './App.css';
 import Dashboard from './pages/Dashboard';
+import BautizoAndreti from './pages/BautizoAndreti';
 
 function App() {
   const [eventInformation, setEventInformation] = useState(null);
@@ -26,7 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<XVCamila firstname='' lastname='' />} />
+        <Route path="/" element={<BautizoAndreti />} />
         <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard guests={eventGuest}/>} />
           {

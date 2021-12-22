@@ -14,7 +14,7 @@ const Contador = () => {
   
   useEffect(() => {
     const actualDate = new Date();
-    const partyDate = new Date(Date.UTC(2021, 11, 19, -2, 0, 0, 0));
+    const partyDate = new Date(Date.UTC(2022, 0, 9, -2, 0, 0, 0));
     const interval = setInterval(() => {
       setLeft(partyDate - actualDate);
     },1000);

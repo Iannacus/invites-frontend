@@ -39,3 +39,15 @@
 .sticker img {
   width: 100%;
 }
+
+.dove {
+  width: 150%;
+  position: absolute;
+  top: 5%;
+  right: 25%;
+  transform: rotate(-20deg);
+}
+
+.dove img {
+  width: 100%;
+}
