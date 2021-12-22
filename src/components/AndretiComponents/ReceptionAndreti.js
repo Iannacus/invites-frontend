@@ -6,7 +6,7 @@ import mima from '../../img/andreti/mima.png';
 const ReceptionAndreti = () => {
   return(
     <div className='centerItem'>
-      <h2 style={{marginTop: '25px', marginBottom: '45px'}} className='blue'>
+      <h2 style={{marginTop: '25px', marginBottom: '45px', color: '#9d9e9c'}} >
         Misa
       </h2>
       <ReceptionCard
@@ -16,7 +16,7 @@ const ReceptionAndreti = () => {
         hour='12:00 PM'
         ubication='https://goo.gl/maps/wX9CYfJBqgfPZnt58'
       />
-      <h2 style={{marginTop: '25px', marginBottom: '45px'}} className='blue'>
+      <h2 style={{marginTop: '25px', marginBottom: '45px', color: '#9d9e9c'}} >
         Recepción
       </h2>
 

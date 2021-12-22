@@ -21,11 +21,11 @@ const ReceptionCard = ({img, placeName, placeDescription, hour, ubication}) => {
           src={img}
           alt='ubicación'
         />
-        <h4 className='blue text-center'>
+        <h4 className='text-center' style={{color: '#9d9e9c'}}>
           {placeName}
         </h4>
-        <p className='gold text-center' style={{fontSize: '18px'}}> {placeDescription} </p>
-        <h4 style={{marginBottom: '35px'}} className='blue text-center'>{hour}</h4>
+        <p className='gold text-center' style={{fontSize: '18px', color:'#dcbe9f'}}> {placeDescription} </p>
+        <h4 style={{marginBottom: '35px', color: '#9d9e9c'}} className='text-center'>{hour}</h4>
         <a href={ubication} target='_blank' rel="noreferrer"
           style={{
             textDecoration: 'none',
@@ -37,7 +37,7 @@ const ReceptionCard = ({img, placeName, placeDescription, hour, ubication}) => {
           <Button 
             textButton='Cómo llegar'
             color='#FFF'
-            bgColor='#82bed6'
+            bgColor='#dcbe9f'
             funct = {() => {}}
           />
         </a>

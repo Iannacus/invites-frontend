@@ -9,20 +9,32 @@ import BautizoAndreti from './pages/BautizoAndreti';
 function App() {
   const [eventInformation, setEventInformation] = useState(null);
   const [eventGuest, setEventGuest] = useState([]);
+  const [andrettiEventInformation, setAndrettiEventInformation] = useState(null);
+  const [andrettiGuest, setAndrettiGuest] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch('https://invitaciones-back.herokuapp.com/api/v1/events/1/information')
     .then(response => response.json())
     .then(data => setEventInformation(data));
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    fetch('https://invitaciones-back.herokuapp.com/api/v1/events/2/information')
+    .then(response => response.json())
+    .then(data => setAndrettiEventInformation(data));
+  }, []);
 
   useEffect(() => {
     if(eventInformation !== null){
       console.log(eventInformation.guests);
       setEventGuest(eventInformation.guests)
     }
-  }, [eventInformation]);
+    if(andrettiEventInformation !== null){
+      console.log(andrettiEventInformation.guests);
+      setAndrettiGuest(andrettiEventInformation.guests)
+    }
+  }, [eventInformation, andrettiEventInformation]);
 
   return (
     <BrowserRouter>
@@ -30,6 +42,24 @@ function App() {
         <Route path="/" element={<BautizoAndreti />} />
         <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard guests={eventGuest}/>} />
+          {
+            andrettiGuest.map((guest) => 
+                  <Route 
+                    path={`/bautizo/${guest.id}`} 
+                    element={
+                      <BautizoAndreti 
+                        firstname={guest.firstname}
+                        lastname={guest.lastname}
+                        confirmation={guest.confirmation}
+                        id={guest.id}
+                        loading={loading}
+                        setSpiner={setLoading}
+                      />
+                    }  
+                    key={guest.id} 
+                  />
+            )
+          }
           {
             eventGuest.map((guest, i) =>
                   <Route 
