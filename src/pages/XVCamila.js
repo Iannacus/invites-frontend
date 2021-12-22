@@ -23,7 +23,12 @@ const XVCamila =  ({ firstname, lastname, confirmation, id, loading, setSpiner }
       />
       <ReceptionSection />
       <GalerySection />
-      <ByeSection />
+      <ByeSection 
+        text1='¡Esperamos contar con tu asistencia!'
+        name='Camila Ramos'
+        event='Mis XV'
+        bgColor='#c2c2e9'
+      />
     </>
   )
 }

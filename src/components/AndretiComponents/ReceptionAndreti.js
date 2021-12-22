@@ -5,7 +5,7 @@ import mima from '../../img/andreti/mima.png';
 
 const ReceptionAndreti = () => {
   return(
-    <div className='centerItem'>
+    <div className='centerItem' style={{paddingBottom: '15px'}}>
       <h2 style={{marginTop: '25px', marginBottom: '45px', color: '#9d9e9c'}} >
         Misa
       </h2>

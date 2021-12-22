@@ -42,10 +42,11 @@ function App() {
         <Route path="/" element={<BautizoAndreti />} />
         <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard guests={eventGuest}/>} />
+        <Route path="/andretti/dashboard" element={<Dashboard guests={andrettiGuest}/>} />
           {
             andrettiGuest.map((guest) => 
                   <Route 
-                    path={`/bautizo/${guest.id}`} 
+                    path={`/andretti/${guest.id}`} 
                     element={
                       <BautizoAndreti 
                         firstname={guest.firstname}
