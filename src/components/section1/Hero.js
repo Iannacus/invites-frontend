@@ -1,6 +1,6 @@
 import React from 'react';
 import sticker1 from '../../img/fotosXVCamila/sticker.png'
-import img1 from '../../img/fotosXVCamila/uno.png'
+import img1 from '../../img/fotosXVCamila/uno.jpg'
 import './Hero.css';
 
 const Hero = () => {
