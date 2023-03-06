@@ -2,6 +2,7 @@ import React from 'react';
 import ByeSection from '../components/byeSection/ByeSection';
 import DateSection from '../components/dateSection/DateSection';
 import GalerySection from '../components/galerySection/GalerySection';
+import GiftTable from '../components/GiftsTable/GiftTable';
 import ReceptionSection from '../components/receptionSection/ReceptionSection';
 import Hero from '../components/section1/Hero';
 import Section2 from '../components/section2/Section2';
@@ -26,6 +27,7 @@ const AzielBby =  ({ firstname, lastname, confirmation, id, loading, setSpiner }
       <ReceptionSection
         title='Recepción'
       />
+      <GiftTable />
       <GalerySection />
       <ByeSection 
         text1='¡Esperamos contar con tu asistencia!'

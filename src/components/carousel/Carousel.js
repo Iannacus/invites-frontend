@@ -8,7 +8,6 @@ import cinco from '../../img/aziel/gaellery/5.png';
 import seis from '../../img/aziel/gaellery/6.png';
 import siete from '../../img/aziel/gaellery/7.png';
 import ocho from '../../img/aziel/gaellery/8.png';
-import nueve from '../../img/aziel/gaellery/9.png';
 import diez from '../../img/aziel/gaellery/10.png';
 import once from '../../img/aziel/gaellery/11.png';
 import doce from '../../img/aziel/gaellery/12.png';
@@ -38,7 +37,6 @@ const Carousel = () => {
       <img style={{width: '100%'}} src={seis} alt='carousel item camila' />
       <img style={{width: '100%'}} src={siete} alt='carousel item camila' />
       <img style={{width: '100%'}} src={ocho} alt='carousel item camila' />
-      <img style={{width: '100%'}} src={nueve} alt='carousel item camila' />
       <img style={{width: '100%'}} src={diez} alt='carousel item camila' />
       <img style={{width: '100%'}} src={once} alt='carousel item camila' />
       <img style={{width: '100%'}} src={doce} alt='carousel item camila' />

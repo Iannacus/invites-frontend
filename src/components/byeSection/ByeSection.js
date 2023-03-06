@@ -3,7 +3,7 @@ import React from 'react';
 const ByeSection = ({text1, name, event, bgColor}) => {
   return(
     <div 
-      style={{height: '50vh', backgroundColor:  "#93B9E2", padding: '20px'}}
+      style={{height: '70vh', backgroundColor:  "#93B9E2", padding: '20px'}}
       className='fullScreen centerItem'
     >
       <p className='aziel-p w-shadow' style={{fontSize: '28px', color: '#135170', textAlign: 'center'}}>
