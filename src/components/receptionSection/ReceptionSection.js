@@ -1,6 +1,5 @@
 import React from 'react';
 import recepcionImg from '../../img/aziel/sala.png';
-import Button from '../Button/Button';
 
 const ReceptionSection = ({
   title
@@ -36,7 +35,6 @@ const ReceptionSection = ({
         <a href='https://goo.gl/maps/umyJ1u7NQeeYjGsJ6' target='_blank' rel="noreferrer"
           style={{
             textDecoration: 'none',
-            display: 'block',
             margin: 'auto',
             width: '50%',
           padding: '10px 15px',

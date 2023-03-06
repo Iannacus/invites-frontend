@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import XVCamila from './pages/XVCamila';
+// import XVCamila from './pages/XVCamila';
 import Home from './pages/Home';
 import './App.css';
-import Dashboard from './pages/Dashboard';
-import BautizoAndreti from './pages/BautizoAndreti';
+// import Dashboard from './pages/Dashboard';
+// import BautizoAndreti from './pages/BautizoAndreti';
 import Admin from './pages/Admin';
 import AzielBby from './pages/AzielBby';
 
 function App() {
-  const [eventInformation, setEventInformation] = useState(null);
-  const [eventGuest, setEventGuest] = useState([]);
-  const [andrettiEventInformation, setAndrettiEventInformation] = useState(null);
-  const [andrettiGuest, setAndrettiGuest] = useState([]);
+  // const [eventInformation, setEventInformation] = useState(null);
+  // const [eventGuest, setEventGuest] = useState([]);
+  // const [andrettiEventInformation, setAndrettiEventInformation] = useState(null);
+  // const [andrettiGuest, setAndrettiGuest] = useState([]);
   const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
@@ -47,9 +47,9 @@ function App() {
       <Routes>
         <Route path="/admin" element={<Admin />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard guests={eventGuest}/>} />
-        <Route path="/andretti/dashboard" element={<Dashboard guests={andrettiGuest}/>} />
-          {
+        { /* <Route path="/dashboard" element={<Dashboard guests={eventGuest}/>} /> */ }
+        {/* <Route path="/andretti/dashboard" element={<Dashboard guests={andrettiGuest}/>} /> */}
+          {/* {
             andrettiGuest.map((guest) => 
                   <Route 
                     path={`/andretti/${guest.id}`} 
@@ -66,8 +66,8 @@ function App() {
                     key={guest.id} 
                   />
             )
-          }
-          {
+          } */}
+          {/* {
             eventGuest.map((guest, i) =>
                   <Route 
                     path={`/camila/${guest.id}`} 
@@ -84,7 +84,7 @@ function App() {
                     key={i} 
                   />
             )
-          }
+          } */}
           <Route path="/aziel-bby-shower" element={<AzielBby 
           firstname='Ian'
                         lastname='Rosas'

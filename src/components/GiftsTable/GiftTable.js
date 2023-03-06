@@ -23,7 +23,6 @@ const GiftTable = ({
         <a href='https://regalame.app/babyazieleduardo/baby-shower-aziel-eduardo' target='_blank' rel="noreferrer"
           style={{
             textDecoration: 'none',
-            display: 'block',
             margin: 'auto',
             width: '50%',
           padding: '10px 15px',
@@ -47,7 +46,6 @@ const GiftTable = ({
         <a href='https://wa.link/1x1km2' target='_blank' rel="noreferrer"
           style={{
             textDecoration: 'none',
-            display: 'block',
             margin: 'auto',
             width: '50%',
           padding: '10px 15px',

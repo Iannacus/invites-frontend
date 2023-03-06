@@ -2,7 +2,7 @@ import React from "react";
 import './Menu.css';
 import MenuItem from "./MenuItem";
 import TopBar from "./TopBar";
-import logo from '../../img/icons/logo.svg'
+// import logo from '../../img/icons/logo.svg'
 
 const MenuItems= [
   {

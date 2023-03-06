@@ -48,7 +48,7 @@ const Hero = ({sticker}) => {
             justifyContent: 'center',
           }}
         >
-            <img src={banner} style={{width: '100%'}}  />
+            <img src={banner} style={{width: '100%'}} alt="banner aziel" />
             
         </div>
         <div

@@ -1,5 +1,4 @@
 import React from 'react';
-import Mentions from './menciones/Mentions';
 import img1 from '../../img/aziel/azielwp2.png';
 import sleep from '../../img/aziel/sleeping-penguin.png';
 import './Section2.css';
