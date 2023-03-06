@@ -2,39 +2,48 @@ import React from "react";
 import './Menu.css';
 import MenuItem from "./MenuItem";
 import TopBar from "./TopBar";
+import logo from '../../img/icons/logo.svg'
 
 const MenuItems= [
   {
-    icon: <i class="fab fa-bandcamp"></i>,
-    title: 'Invite You'
+    icon: <></>,
+    title: 'InviteMe',
+    isTitle: true
   },
   {
     icon: <i class="fas fa-house-user"></i>,
-    title: 'Dashboard'
+    title: 'Dashboard',
+    isTitle: false
   },
   {
     icon: <i class="fas fa-user"></i>,
-    title: 'Invitados'
+    title: 'Invitados',
+    isTitle: false
   },
   {
     icon: <i class="fas fa-comment-dots"></i>,
-    title: 'Mensajes'
+    title: 'Mensajes',
+    isTitle: false
   },
   {
     icon: <i class="fas fa-question-circle"></i>,
-    title: 'Ayuda'
+    title: 'Ayuda',
+    isTitle: false
   },
   {
     icon: <i class="fas fa-user-cog"></i>,
-    title: 'Ajustes'
+    title: 'Ajustes',
+    isTitle: false
   },
   {
     icon: <i class="fas fa-user-lock"></i>,
-    title: 'Seguridad'
+    title: 'Seguridad',
+    isTitle: false
   },
   {
     icon: <i class="fas fa-sign-out-alt"></i>,
-    title: 'Salir'
+    title: 'Salir',
+    isTitle: false
   }
 ]
 
@@ -49,6 +58,7 @@ const Menu = () => {
                 <MenuItem 
                   icon={item.icon}
                   itemTitle={item.title}
+                  isTitle={item.isTitle}
                 />
               </li>
             )
