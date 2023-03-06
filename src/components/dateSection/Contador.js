@@ -11,10 +11,11 @@ const Contador = () => {
   const [leftSeconds, setLeftSeconds] = useState('');
 
 
-  
+  // Date.UTC(year, monthIndex, day, hour, minute, second, millisecond)  
   useEffect(() => {
     const actualDate = new Date();
-    const partyDate = new Date(Date.UTC(2022, 0, 9, -2, 0, 0, 0));
+    const partyDate = new Date(Date.UTC(2023, 3, 1, 14, 0, 0, 0));
+    partyDate.setHours(partyDate.getHours() + 6);
     const interval = setInterval(() => {
       setLeft(partyDate - actualDate);
     },1000);
@@ -35,7 +36,7 @@ const Contador = () => {
   }, [left])
 
   return (
-    <div className='counter-container'>
+    <div className='counter-container' style={{color: '#93B9E2'}}>
       <Digit textDigit={leftDays} textDescription='Días' />
       <DigitSeparator />
       <Digit textDigit={leftHours % 24} textDescription='Horas'/>

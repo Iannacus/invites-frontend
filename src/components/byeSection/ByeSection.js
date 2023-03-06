@@ -3,10 +3,14 @@ import React from 'react';
 const ByeSection = ({text1, name, event, bgColor}) => {
   return(
     <div 
-      style={{height: '50vh', backgroundColor: bgColor}}
+      style={{height: '50vh', backgroundColor:  "#93B9E2", padding: '20px'}}
       className='fullScreen centerItem'
     >
-      <h4 className='text-center white'> {text1} </h4>
+      <p className='aziel-p w-shadow' style={{fontSize: '28px', color: '#135170', textAlign: 'center'}}>
+          <b>
+            Los pies más pequeños hacen las huellas más grandes en nuestros corazones
+          </b>
+        </p>
       <br />
       <br />
       <h3 className='white text-center'> {name} </h3>

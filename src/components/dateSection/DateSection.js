@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import img2 from '../../img/fotosXVCamila/dos.png'
+import img2 from '../../img/aziel/dateHero.jpg'
 import Button from '../Button/Button';
 import Contador from './Contador';
 import Loader from '../Loader';
@@ -54,9 +54,9 @@ const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
         className='shadow'
         style={{padding: '15px'}}
       >
-        <div className='fullScreen centerItem section-border'>
-          <h1 style={{color: '#FFF', fontSize: '56px', marginBottom: '20px'}}>18 Dic 2021</h1>
-          <h5 style={{color: '#FFF'}}>Sólo Faltan: </h5>
+        <div className='fullScreen centerItem section-border-b'>
+          <h1 className="b-shadow" style={{color: '#93B9E2', fontSize: '56px', marginBottom: '20px'}}>1 Abr 2023</h1>
+          <h5 className="b-shadow" style={{color: '#93B9E2'}}>Sólo Faltan: </h5>
           <Contador />
           {
             loading ? 
@@ -67,8 +67,8 @@ const DateSection = ({confirmation, guestId, loading, setSpiner}) => {
                   <NumberInput funct={handleNumber} alert={alert}/>
                   <Button 
                     textButton='Confirmar Asistencia'
-                    color='#82bed6' 
-                    bgColor='#FFF'
+                    color='#FFF' 
+                    bgColor='#93B9E2'
                     funct={handleConfirmation}
                   />
                 </div>

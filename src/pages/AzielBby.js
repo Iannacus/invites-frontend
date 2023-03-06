@@ -5,14 +5,13 @@ import GalerySection from '../components/galerySection/GalerySection';
 import ReceptionSection from '../components/receptionSection/ReceptionSection';
 import Hero from '../components/section1/Hero';
 import Section2 from '../components/section2/Section2';
-import sticker from '../img/fotosXVCamila/sticker.png'
+import sleepP from '../img/aziel/penguin-removebg-preview.png';
 
-const XVCamila =  ({ firstname, lastname, confirmation, id, loading, setSpiner }) => {
-  console.log(firstname)
+const AzielBby =  ({ firstname, lastname, confirmation, id, loading, setSpiner }) => {
   return(
     <>
       <Hero
-        sticker={sticker}
+        sticker={sleepP}
       />
       <Section2 
         firstname={firstname}
@@ -30,12 +29,12 @@ const XVCamila =  ({ firstname, lastname, confirmation, id, loading, setSpiner }
       <GalerySection />
       <ByeSection 
         text1='¡Esperamos contar con tu asistencia!'
-        name='Camila Ramos'
-        event='Mis XV'
+        name='Ian Rosas & Estefany Ramos'
+        event='Aziel baby shower'
         bgColor='#c2c2e9'
       />
     </>
   )
 }
 
-export default XVCamila;
+export default AzielBby;

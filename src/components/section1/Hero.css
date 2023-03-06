@@ -24,16 +24,14 @@
 
 .present {
   position: relative;
-  padding-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%
 }
 
 .sticker {
-  width: 230%;
-  position: absolute;
+  width: 100%;
 }
 
 .sticker img {

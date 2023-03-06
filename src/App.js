@@ -6,6 +6,7 @@ import './App.css';
 import Dashboard from './pages/Dashboard';
 import BautizoAndreti from './pages/BautizoAndreti';
 import Admin from './pages/Admin';
+import AzielBby from './pages/AzielBby';
 
 function App() {
   const [eventInformation, setEventInformation] = useState(null);
@@ -14,28 +15,32 @@ function App() {
   const [andrettiGuest, setAndrettiGuest] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetch('https://invitaciones-back.herokuapp.com/api/v1/events/1/information')
-    .then(response => response.json())
-    .then(data => setEventInformation(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:8000/api/v1/events/1/information')
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     setEventInformation(data);
+  //     setAndrettiEventInformation(data);
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    fetch('https://invitaciones-back.herokuapp.com/api/v1/events/2/information')
-    .then(response => response.json())
-    .then(data => setAndrettiEventInformation(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:8000/api/v1/events/2/information')
+  //   .then(response => response.json())
+  //   .then(data => setAndrettiEventInformation(data));
+  // }, []);
 
-  useEffect(() => {
-    if(eventInformation !== null){
-      console.log(eventInformation.guests);
-      setEventGuest(eventInformation.guests)
-    }
-    if(andrettiEventInformation !== null){
-      console.log(andrettiEventInformation.guests);
-      setAndrettiGuest(andrettiEventInformation.guests)
-    }
-  }, [eventInformation, andrettiEventInformation]);
+  // useEffect(() => {
+  //   if(eventInformation !== null){
+  //     console.log(eventInformation.guests);
+  //     setEventGuest(eventInformation.guests);
+      
+  //   }
+  //   if(andrettiEventInformation !== null){
+  //     console.log(andrettiEventInformation.guests);
+  //     setAndrettiGuest(andrettiEventInformation.guests)
+  //   }
+  // }, [eventInformation, andrettiEventInformation]);
 
   return (
     <BrowserRouter>
@@ -80,6 +85,14 @@ function App() {
                   />
             )
           }
+          <Route path="/aziel-bby-shower" element={<AzielBby 
+          firstname='Ian'
+                        lastname='Rosas'
+                        confirmation={false}
+                        id={234}
+                        loading={loading}
+                        setSpiner={setLoading}
+                      />} />
       </Routes>
     </BrowserRouter>
   );

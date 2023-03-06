@@ -5,8 +5,8 @@ const GalerySection = () => {
   return (
     <>
       <h2 
-        className='gold text-center'
-        style={{marginTop: '25px', marginBottom: '25px'}}
+        className='text-center'
+        style={{marginTop: '25px', marginBottom: '25px', color: "#93B9E2"}}
       >
         Galeria
       </h2>

@@ -1,5 +1,11 @@
 .section-border {
   border: 2px solid #d8c084;
+  border-radius: 20px;
+}
+
+.section-border-b{
+  border: 2px solid rgb(147, 185, 226);
+  border-radius: 20px;
 }
 
 .inputs {
