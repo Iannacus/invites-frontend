@@ -38,3 +38,26 @@ p {
 .p-shadow {
   text-shadow: 2px 2px 4px rgba(93, 113, 126, 0.82);
 }
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}

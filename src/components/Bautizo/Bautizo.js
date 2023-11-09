@@ -1,13 +1,17 @@
 import React from "react";
-import "./bautizo.css";
 import Hero from "./sections/hero/Hero";
 import SectionContainer from "./section-container/SectionContainer";
+import Welcome from "./sections/welcome/Welcome";
+import "./bautizo.css";
 
 function Bautizo() {
   return (
     <>
       <SectionContainer>
         <Hero />
+      </SectionContainer>
+      <SectionContainer>
+        <Welcome />
       </SectionContainer>
     </>
   );
