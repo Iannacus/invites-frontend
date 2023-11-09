@@ -3,7 +3,7 @@ import ornament from "../../../../../img/bautizo/horizontal-ornament.png";
 import angel from "../../../../../img/bautizo/angel1.png";
 import "./welcome-ornaments.css";
 
-function WelcomeOrnaments() {
+function WelcomeOrnaments({ children }) {
   return (
     <div className="positionOrnament">
       <div className="horizontal-ornament top">
@@ -18,9 +18,10 @@ function WelcomeOrnaments() {
       </div>
       <div className="horizontal-ornament bottom right-50 i-1">
         <div className="center-image">
-          <img src={angel} style={{ height: "400px" }} />
+          <img src={angel} className="img-shadow" style={{ height: "400px" }} />
         </div>
       </div>
+      {children}
     </div>
   );
 }

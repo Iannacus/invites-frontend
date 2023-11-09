@@ -3,7 +3,7 @@ import BackDropContainer from "../bg/BackDropContainer";
 import bg from "../../../img/bautizo/heroBg.jpg";
 import "./section-container.css";
 
-function SectionContainer({ noBorder, style, children }) {
+function SectionContainer({ noBorder, style, children, bgColor }) {
   const prepareClassNames = () => {
     const classes = ["section-content"];
 
@@ -19,7 +19,10 @@ function SectionContainer({ noBorder, style, children }) {
 
   return (
     <BackDropContainer img={bg}>
-      <div className="section-container " style={{ overflow: "hidden" }}>
+      <div
+        className="section-container "
+        style={{ overflow: "hidden", background: `${bgColor ?? "#fff"}` }}
+      >
         <div className={styles.join(" ")}>{children}</div>
       </div>
     </BackDropContainer>
