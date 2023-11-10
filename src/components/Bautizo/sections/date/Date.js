@@ -2,7 +2,6 @@ import React from "react";
 import Contador from "../../../dateSection/Contador";
 import espirituSanto from "../../../../img/bautizo/espiritu-santo.png";
 import corner from "../../../../img/bautizo/ornamet.png";
-import infinite from "../../../../img/bautizo/infinitebottom.png";
 import "./date.css";
 
 function Date() {

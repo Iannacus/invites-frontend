@@ -21,7 +21,10 @@ function SectionContainer({ noBorder, style, children, bgColor }) {
     <BackDropContainer img={bg}>
       <div
         className="section-container "
-        style={{ overflow: "hidden", background: `${bgColor ?? "#fff"}` }}
+        style={{
+          overflow: "hidden",
+          background: `${bgColor ?? "#fff"}`,
+        }}
       >
         <div className={styles.join(" ")}>{children}</div>
       </div>
