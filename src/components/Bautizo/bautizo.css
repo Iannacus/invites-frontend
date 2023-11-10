@@ -33,6 +33,10 @@ input {
   color: #f7bb60;
 }
 
+.ba-yellow {
+  color: #ffce3a;
+}
+
 .g-shadow {
   text-shadow: 2px 2px 4px #d8c084;
 }

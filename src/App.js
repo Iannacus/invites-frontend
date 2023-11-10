@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import XVCamila from './pages/XVCamila';
 import Home from "./pages/Home";
@@ -8,24 +8,30 @@ import "./App.css";
 import Admin from "./pages/Admin";
 import AzielBby from "./pages/AzielBby";
 import Envelope from "./components/envelop/Envelope";
-import SectionContainer from "./components/Bautizo/section-container/SectionContainer";
-import HeroBautizo from "./components/Bautizo/sections/hero/Hero";
 import Bautizo from "./components/Bautizo/Bautizo";
 function App() {
-  // const [eventInformation, setEventInformation] = useState(null);
+  const [refetch, setRefetch] = useState(true);
+  const [eventInformation, setEventInformation] = useState(null);
   // const [eventGuest, setEventGuest] = useState([]);
   // const [andrettiEventInformation, setAndrettiEventInformation] = useState(null);
   // const [andrettiGuest, setAndrettiGuest] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:8000/api/v1/events/1/information')
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     setEventInformation(data);
-  //     setAndrettiEventInformation(data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    if (refetch) {
+      fetch(
+        "https://wenvel-backend-dev-gdgs.1.us-1.fl0.io/api/v1/events/1/information"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setEventInformation(data);
+        })
+        .finally(() => {
+          setRefetch(false);
+        });
+    }
+  }, [refetch]);
 
   // useEffect(() => {
   //   fetch('http://localhost:8000/api/v1/events/2/information')
@@ -88,10 +94,25 @@ function App() {
                   />
             )
           } */}
-        <Route path="/aziel-bautizo" element={<Bautizo />} />
 
         <Route path="/envelope" element={<Envelope />} />
 
+        {eventInformation?.guests.map((guest, i) => (
+          <Route
+            path={`/aziel-bautizo/${guest.id}`}
+            element={
+              <Bautizo
+                firstname={guest.firstname}
+                lastname={guest.lastname}
+                confirmation={guest.confirmation}
+                id={guest.id}
+                loading={loading}
+                setSpiner={setLoading}
+                setRefetch={setRefetch}
+              />
+            }
+          />
+        ))}
         <Route
           path="/aziel-bby-shower"
           element={

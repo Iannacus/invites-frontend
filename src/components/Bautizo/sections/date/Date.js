@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Contador from "../../../dateSection/Contador";
 import espirituSanto from "../../../../img/bautizo/espiritu-santo.png";
 import corner from "../../../../img/bautizo/ornamet.png";
 import "./date.css";
+import Loader from "../../../Loader";
 
-function Date() {
+function Date({ guestId, confirmation, loading, setSpiner, setRefetch }) {
+  const handleConfirmation = () => {
+    setSpiner(true);
+    fetch(
+      `https://wenvel-backend-dev-gdgs.1.us-1.fl0.io/api/v1/guests/${guestId}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ confirmation: true }),
+      }
+    )
+      .then(() => {
+        setRefetch(true);
+        setSpiner(false);
+      })
+      .catch((error) =>
+        window.alert("No se pudo confirmar tu asistencia, intenta más tarde")
+      );
+  };
   return (
     <>
       <div
@@ -92,10 +111,29 @@ function Date() {
             </div>
           </blockquote>
         </div>
-        <h2 className="bauptism center g-shadow">18 de Noviembre</h2>
-        <p className="text center g-shadow">Solo faltan</p>
+        <div>
+          <h5 className="bauptism" style={{ margin: 0 }}>
+            Mis padres: Ian y Estefany
+          </h5>
+          <h5 className="bauptism" style={{ margin: 0 }}>
+            Mi madrina: Cinthia Jimenez
+          </h5>
+          <p className="center bauptism">Les esperan este:</p>
+        </div>
+        <h3 className="bauptism center g-shadow">18 de Noviembre</h3>
         <Contador />
-        <button className="confirmButton">Confirmar asistencia</button>
+        {loading ? (
+          <Loader />
+        ) : !confirmation ? (
+          <button
+            className="confirmButton"
+            onClick={() => handleConfirmation()}
+          >
+            Confirmar asistencia
+          </button>
+        ) : (
+          <p className="text bauptism">Gracias por confirmar tu asistencia</p>
+        )}
       </div>
     </>
   );
