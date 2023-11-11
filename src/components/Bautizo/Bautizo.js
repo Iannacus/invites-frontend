@@ -72,8 +72,7 @@ function Bautizo({
             left: 0,
             width: "100%",
             height: "100%",
-            background: "rgba(255, 251, 231, 0.6)",
-            backdropFilter: "blur(3px)",
+            background: "rgba(255, 251, 231, 0.5)",
             zIndex: 1,
           }}
         />
