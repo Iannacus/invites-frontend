@@ -7,7 +7,7 @@ const Page = forwardRef(
   ({ children, title = "", meta, description, ...other }, ref) => (
     <>
       <Helmet>
-        <title>{`${title} - Mi despacho`}</title>
+        <title>{`${title} - Wenvel`}</title>
         <meta name="description" content={description} />
         {meta}
       </Helmet>

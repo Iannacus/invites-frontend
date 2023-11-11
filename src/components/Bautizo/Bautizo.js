@@ -11,6 +11,7 @@ import sectionBg from "../../img/bautizo/byebg.jpeg";
 import angel from "../../img/bautizo/angel3.png";
 import tOrnament from "../../img/bautizo/top-ornament.png";
 import Page from "../Page";
+import BottomNavigation from "../bottom-navigation/BottomNavigation";
 
 function Bautizo({
   firstname,
