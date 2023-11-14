@@ -13,7 +13,7 @@ const Contador = () => {
   // Date.UTC(year, monthIndex, day, hour, minute, second, millisecond)
   useEffect(() => {
     const actualDate = new Date();
-    const partyDate = new Date(Date.UTC(2023, 10, 18, 12, 0, 0, 0));
+    const partyDate = new Date(Date.UTC(2023, 10, 18, 9, 30, 0, 0));
     partyDate.setHours(partyDate.getHours() + 6);
     const interval = setInterval(() => {
       setLeft(partyDate - actualDate);
@@ -35,13 +35,27 @@ const Contador = () => {
 
   return (
     <div className="counter-container" style={{ color: "#93B9E2" }}>
-      <Digit textDigit={leftDays} textDescription="Días" />
-      <DigitSeparator />
-      <Digit textDigit={leftHours % 24} textDescription="Horas" />
-      <DigitSeparator />
-      <Digit textDigit={leftMinutes % 60} textDescription="Min" />
-      <DigitSeparator />
-      <Digit textDigit={leftSeconds % 60} textDescription="Seg" />
+      {leftDays > 0 && leftHours > 0 && leftMinutes > 0 && leftSeconds > 0 ? (
+        <>
+          <Digit textDigit={leftDays} textDescription="Días" />
+          <DigitSeparator />
+          <Digit textDigit={leftHours % 24} textDescription="Horas" />
+          <DigitSeparator />
+          <Digit textDigit={leftMinutes % 60} textDescription="Min" />
+          <DigitSeparator />
+          <Digit textDigit={leftSeconds % 60} textDescription="Seg" />
+        </>
+      ) : (
+        <>
+          <Digit textDigit={0} textDescription="Días" />
+          <DigitSeparator />
+          <Digit textDigit={0} textDescription="Horas" />
+          <DigitSeparator />
+          <Digit textDigit={0} textDescription="Min" />
+          <DigitSeparator />
+          <Digit textDigit={0} textDescription="Seg" />
+        </>
+      )}
     </div>
   );
 };
