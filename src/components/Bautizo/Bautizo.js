@@ -48,12 +48,12 @@ function Bautizo({
           image={iglesia}
           name="Santuario Diocesano Mariano de Nuestra Señora del Carmen"
           address="Calle 31 s/n Col. centro. Frente al parque Ignacio Zaragoza"
-          hour="12:00 pm"
+          hour="09:30 am"
           link="https://maps.app.goo.gl/mUfdAF5Kg5p7c2hg9"
           buttonStyles="confirmButton"
         />
       </SectionContainer>
-      <SectionContainer bgColor="#FFFBE7">
+      {/* <SectionContainer bgColor="#FFFBE7">
         <PlaceSection
           heading="Recepción"
           image={alberca}
@@ -64,7 +64,7 @@ function Bautizo({
           buttonStyles="confirmButton"
           inverted
         />
-      </SectionContainer>
+      </SectionContainer> */}
       <SectionContainer withBgImage img={sectionBg}>
         <div
           style={{
