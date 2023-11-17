@@ -3,7 +3,7 @@ import Hero from "./sections/hero/Hero";
 import SectionContainer from "./section-container/SectionContainer";
 import Welcome from "./sections/welcome/Welcome";
 import "./bautizo.css";
-import Date from "./sections/date/Date";
+import DateCard from "./sections/date/Date";
 import PlaceSection from "./sections/places/PlaceSection";
 import iglesia from "../../img/bautizo/iglesia.jpg";
 import alberca from "../../img/bautizo/alberca.png";
@@ -11,7 +11,7 @@ import sectionBg from "../../img/bautizo/byebg.jpeg";
 import angel from "../../img/bautizo/angel3.png";
 import tOrnament from "../../img/bautizo/top-ornament.png";
 import Page from "../Page";
-import BottomNavigation from "../bottom-navigation/BottomNavigation";
+import { isPast } from "date-fns";
 
 function Bautizo({
   firstname,
@@ -22,6 +22,12 @@ function Bautizo({
   setSpiner,
   setRefetch,
 }) {
+  const currentDate = new Date();
+  const eventDate = new Date(2023, 10, 18, 15, 30, 0, 0);
+  console.log(eventDate);
+
+  const isTimeTo = isPast(eventDate);
+
   return (
     <Page
       title={`Invitación ${firstname}`}
@@ -34,7 +40,7 @@ function Bautizo({
         <Welcome name={`${firstname} ${lastname}`} />
       </SectionContainer>
       <SectionContainer noBorder bgColor="#FFFBE7">
-        <Date
+        <DateCard
           guestId={id}
           confirmation={confirmation}
           loading={loading}
@@ -53,18 +59,21 @@ function Bautizo({
           buttonStyles="confirmButton"
         />
       </SectionContainer>
-      {/* <SectionContainer bgColor="#FFFBE7">
-        <PlaceSection
-          heading="Recepción"
-          image={alberca}
-          name="Lexios Alberca"
-          address="Cerrada Amapola, Col. Sna Nicolás #144, pasando colegio Continental"
-          hour="02:00 pm"
-          link="https://maps.app.goo.gl/DL4QU6b7cVz4pQx2A"
-          buttonStyles="confirmButton"
-          inverted
-        />
-      </SectionContainer> */}
+
+      {isTimeTo && (
+        <SectionContainer bgColor="#FFFBE7">
+          <PlaceSection
+            heading="Recepción"
+            image={alberca}
+            name="Lexios Alberca"
+            address="Cerrada Amapola, Col. Sna Nicolás #144, pasando colegio Continental"
+            hour="02:00 pm"
+            link="https://maps.app.goo.gl/DL4QU6b7cVz4pQx2A"
+            buttonStyles="confirmButton"
+            inverted
+          />
+        </SectionContainer>
+      )}
       <SectionContainer withBgImage img={sectionBg}>
         <div
           style={{
