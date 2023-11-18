@@ -59,8 +59,6 @@ function Bautizo({
           buttonStyles="confirmButton"
         />
       </SectionContainer>
-
-      {isTimeTo && (
         <SectionContainer bgColor="#FFFBE7">
           <PlaceSection
             heading="Recepción"
@@ -73,7 +71,6 @@ function Bautizo({
             inverted
           />
         </SectionContainer>
-      )}
       <SectionContainer withBgImage img={sectionBg}>
         <div
           style={{
